@@ -10,6 +10,7 @@
 , requests
 , setuptools
 , six
+, maintainers
 }:
 
 buildPythonPackage rec {
@@ -33,12 +34,12 @@ buildPythonPackage rec {
     # only unit tests as integration tests need a OpenSSH client/server setup
     py.test tests/unit
   '';
-  
-  meta = with lib; {
+
+  meta = {
     homepage = "https://bundlewrap.org/";
     description = "Easy, Concise and Decentralized Config management with Python";
-    license = [ licenses.gpl3 ] ;
+    license = [ lib.licenses.gpl3 ] ;
     maintainers = with maintainers; [ wamserma ];
-    platforms = platforms.linux ++ platforms.darwin;
+    platforms = lib.platforms.linux ++ lib.platforms.darwin;
   };
 }

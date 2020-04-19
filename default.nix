@@ -15,7 +15,9 @@ rec {
   overlays = import ./overlays; # nixpkgs overlays
 
   python3AppPackages = pkgs.recurseIntoAttrs rec {
-    bundlewrap = pkgs.python3.pkgs.callPackage ./pkgs/development/python-modules/bundlewrap { };
+    bundlewrap = pkgs.python3.pkgs.callPackage ./pkgs/development/python-modules/bundlewrap {
+      inherit (lib) maintainers;
+    };
   };
 
   bundlewrap = pkgs.python3.pkgs.toPythonApplication python3AppPackages.bundlewrap;
