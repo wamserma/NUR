@@ -16,6 +16,8 @@ let
   python3AppPackages = pkgs.recurseIntoAttrs rec {
     bundlewrap = pkgs.python3.pkgs.callPackage ./pkgs/development/python-modules/bundlewrap { lib = mylib; };
   };
+
+  gcc-arm-bin-9 = { target } : pkgs.callPackage ./pkgs/development/compilers/gcc-arm-bin/9 { target = target; };
 in
 {
   # The `lib`, `modules`, and `overlay` names are special
@@ -24,5 +26,11 @@ in
   overlays = import ./overlays; # nixpkgs overlays
 
   bundlewrap = pkgs.python3.pkgs.toPythonApplication python3AppPackages.bundlewrap;
+
+  gcc-arm-bin-arm = gcc-arm-bin-9 { target = "arm"; };
+  gcc-arm-bin-armhf = gcc-arm-bin-9 { target = "armhf"; };
+  gcc-arm-bin-aarch64 = gcc-arm-bin-9 { target = "aarch64"; };
+  gcc-arm-bin-aarch64-gnu = gcc-arm-bin-9 { target = "aarch64-gnu"; };
+  gcc-arm-bin-aarch64be-gnu = gcc-arm-bin-9 { target = "aarch64be-gnu"; };
 }
 

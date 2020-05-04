@@ -18,6 +18,10 @@ Search: <https://nix-community.github.io/nur-search/repos/wamserma/>
 
 + [bundlewrap](https://bundlewrap.org/) a lightweight, python-based alternative to Ansible
 
+### Development tools
+
++ [Arm GCC 9 for Cortex A](https://developer.arm.com/open-source/gnu-toolchain/gnu-a) the reference compilers for development on the Arm Cortex A platform, distributed as static binaries
+
 ## How to use?
 
 [see here](https://github.com/nix-community/NUR/blob/master/README.md)
