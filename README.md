@@ -19,6 +19,10 @@ Search: <https://nix-community.github.io/nur-search/repos/wamserma/>
 
 + [bundlewrap](https://bundlewrap.org/) a lightweight, python-based alternative to Ansible
 
+### Productivity Tools
+
++ [piknik](https://github.com/jedisct1/piknik) a copy/paste clipboard tool that works across machines and networks with end-to-end encryption
+
 ### Security Tools
 
 + [bandit](https://github.com/PyCQA/bandit) a static code analysis tool designed to find common security issues in Python code (just appifies the python package from Nixpkgs)

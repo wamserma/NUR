@@ -32,5 +32,6 @@ rec {
   masterpdfeditor4 = pkgs.callPackage pkgs/applications/misc/masterpdfeditor/default.nix { lib = mylib; qtbase = pkgs.qt5.qtbase; qtsvg = pkgs.qt5.qtsvg; wrapQtAppsHook = pkgs.qt5.wrapQtAppsHook; };
 
   genius-sf-600-firmware = pkgs.callPackage pkgs/misc/firmware/genius/sf600.nix { lib = mylib; };
+  piknik = pkgs.callPackage ./pkgs/tools/misc/piknik { lib = mylib; };
 }
 
